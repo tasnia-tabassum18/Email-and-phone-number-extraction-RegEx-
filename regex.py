@@ -15,7 +15,7 @@ try:
     for line in file:
         line = line.strip()
         #for email
-        emails = re.findall("[0-9a-zA-z]+@[0-9a-zA-z]+\.[0-9a-zA-z]+", line)
+        emails = re.findall("[0-9a-zA-z]+@[g][m][a][i][l]+\.[c][o][m]+", line)
         if(len(emails) > 0):
             print(emails)
         e_list.append(emails)
@@ -48,6 +48,7 @@ except FileNotFoundError as e:
 with open('numbers.txt', 'w') as fp:
   for n in no_list:
         fp.write("%s\n" % n)
+
 
 
 
