@@ -10,32 +10,14 @@ Original file is located at
 #get txt file
 import re
 e_list=[]
+no_list=[]
 try:
     file = open("dummy.txt")
     for line in file:
         line = line.strip()
         #for email
-        emails = re.findall("[0-9a-zA-z]+@[g][m][a][i][l]+\.[c][o][m]+", line)
-        if(len(emails) > 0):
-            print(emails)
+        emails = re.findall("[0-9a-zA-z]+@gmail.com+", line)
         e_list.append(emails)
- 
-except FileNotFoundError as e:
-    print(e)
-
-#file writing 
-with open('emails.txt', 'w') as fp:
-  for n in e_list:
-        fp.write("%s\n" % n)
-
-import re
-no_list=[]
-
-try:
-    file = open("dummy.txt")
-    for line in file:
-        line = line.strip()
-        #for phone number
         no =re.findall("[\+]{1}[8]{2}[0-9]{11}", line)
         print(no)
         no_list.append(no)
@@ -45,7 +27,12 @@ except FileNotFoundError as e:
     print(e)
 
 #file writing 
-with open('numbers.txt', 'w') as fp:
+with open('gmail_id.txt', 'w') as fp:
+  for n in e_list:
+        fp.write("%s\n" % n)
+
+#file writing 
+with open('bd_mobile.txt', 'w') as fp:
   for n in no_list:
         fp.write("%s\n" % n)
 
